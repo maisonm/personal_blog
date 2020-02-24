@@ -1,0 +1,11 @@
+{
+  "name": "site_react",
+  "version": "1.0.0",
+  "description": "Personal site for Maison moa",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maison Moa",
+  "license": "ISC"
+}
