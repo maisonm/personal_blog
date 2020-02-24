@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { ThemeProvider } from 'styled-components';
+import { main_theme } from './components/theme/main_theme';
+
+// Components
+import Navigation from './components/PageBase/Navigation/Navigation';
+import Footer from './components/PageBase/Footer/Footer';
+import Blog from './components/Pages/Blog/Blog';
+
+ReactDOM.render(
+  <Router>
+    <ThemeProvider theme={main_theme}>
+      <div className="appContainer">
+        <Navigation />
+        <Route exact path="/" component={Blog} />
+        <Route exact path="/blog" component={Blog} />
+        <Footer />
+      </div>
+    </ThemeProvider>
+  </Router>,
+
+  document.getElementById('root')
+);
