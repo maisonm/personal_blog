@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const cors = require('cors');
 //Allows global access to variables in our .env file
 require('dotenv').config({
-  path: path.join(__dirname, '../../utils/enviroment/.env')
+  path: path.join(__dirname, '../../.env')
 });
 
 module.exports = () => {
