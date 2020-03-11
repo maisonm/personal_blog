@@ -11,7 +11,7 @@ import { main_theme } from './components/theme/main_theme';
 import Navigation from './components/PageBase/Navigation/Navigation';
 import Footer from './components/PageBase/Footer/Footer';
 import Blog from './components/Pages/Blog/Blog';
-
+import Dashboard from './components/Dasboard/Dashboard';
 //FA
 import fontawesome from './fontawesome_library/fontawesome';
 
@@ -22,6 +22,7 @@ ReactDOM.render(
         <Navigation />
         <Route exact path="/" component={Blog} />
         <Route exact path="/blog" component={Blog} />
+        <Route exact path="/dashboard/user/:userid*" component={Dashboard} />
         <Footer />
       </div>
     </ThemeProvider>

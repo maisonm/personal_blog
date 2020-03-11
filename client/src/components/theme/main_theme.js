@@ -33,6 +33,7 @@ export const main_theme = {
 
   //Animations
   animationTrans: '.3s ease',
+  mainBezier: 'cubic-bezier(.53,1.28,.33,1.45)',
 
   //Icons
   mainIconColor: '#808080',

@@ -4,11 +4,11 @@ import propTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //Styles
-import { IconSpan } from './styles';
+import { IconContainer } from './styles';
 
 //Color argument should be the property name of the desired icon color found in main_theme.js.
 
-const Icon = ({ icon, size, color }) => {
+const Icon = ({ icon, size, color, cursor, hovercolor, active, children }) => {
   let iconSize;
   switch (size) {
     case 'sm':
@@ -25,9 +25,16 @@ const Icon = ({ icon, size, color }) => {
       break;
   }
   return (
-    <IconSpan color={color} size={iconSize}>
+    <IconContainer
+      color={color}
+      size={iconSize}
+      cursor={cursor}
+      hovercolor={hovercolor}
+      active={active}
+    >
       <FontAwesomeIcon icon={icon} />
-    </IconSpan>
+      <p>{children}</p>
+    </IconContainer>
   );
 };
 
@@ -36,5 +43,8 @@ export default Icon;
 propTypes.Icon = {
   icon: propTypes.array.isRequired,
   size: propTypes.string.isRequired,
-  color: propTypes.string.isRequired
+  color: propTypes.string.isRequired,
+  cursor: propTypes.string,
+  hoverColor: propTypes.string,
+  active: propTypes.bool
 };

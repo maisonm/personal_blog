@@ -10,7 +10,7 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   animation: ${props => props.theme.animationTrans} ${pageAnimationOnEnter};
-  padding: 40px;
+  padding: 30px;
   padding-top: 60px;
 `;
 
@@ -18,6 +18,7 @@ export const PageTitle = styled.div`
   width: 100%;
   color: ${props => props.theme.mainFontColorLight};
   margin-bottom: 30px;
+  margin-left: 4px;
 
   & > h2 {
     color: ${props => props.theme.mainFontColor};
