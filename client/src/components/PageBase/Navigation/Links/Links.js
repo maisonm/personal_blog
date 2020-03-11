@@ -14,7 +14,7 @@ const Links = ({ links }) => {
   return (
     <LinkContainer>
       {links.map((link, i) => (
-        <LinkWrap isActive={link.name === clickedLink ? true : false}>
+        <LinkWrap isActive={link.name === clickedLink ? true : false} key={i}>
           <Link
             to={link.path}
             onClick={() => {

@@ -12,6 +12,9 @@ import Navigation from './components/PageBase/Navigation/Navigation';
 import Footer from './components/PageBase/Footer/Footer';
 import Blog from './components/Pages/Blog/Blog';
 
+//FA
+import fontawesome from './fontawesome_library/fontawesome';
+
 ReactDOM.render(
   <Router>
     <ThemeProvider theme={main_theme}>

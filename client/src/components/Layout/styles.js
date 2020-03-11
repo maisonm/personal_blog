@@ -11,16 +11,22 @@ export const PageContainer = styled.div`
   flex-direction: column;
   animation: ${props => props.theme.animationTrans} ${pageAnimationOnEnter};
   padding: 40px;
+  padding-top: 60px;
 `;
 
 export const PageTitle = styled.div`
   width: 100%;
   color: ${props => props.theme.mainFontColorLight};
+  margin-bottom: 30px;
+
+  & > h2 {
+    color: ${props => props.theme.mainFontColor};
+  }
 `;
 
 export const ChildrenContainer = styled.div`
   width: 100%;
-  border: solid;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;

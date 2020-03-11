@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const LinkContainer = styled.div`
   width: 100%;
@@ -6,7 +6,7 @@ export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 export const LinkWrap = styled.div`
   display: flex;
@@ -35,4 +35,4 @@ export const LinkWrap = styled.div`
       color: ${props => props.theme.secondaryFontColor};
     }
   }
-`
+`;
