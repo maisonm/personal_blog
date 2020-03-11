@@ -1,0 +1,3 @@
+-Add In Tag feature to pre-select a set of tags saved into the database. These tags will have associated icons.
+
+-Add semantic ui search bars throughout the site but importantly the top of the nav bar.
