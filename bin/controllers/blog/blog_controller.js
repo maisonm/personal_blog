@@ -3,11 +3,11 @@ const date_ = require('../utils/date_');
 
 exports.add_blog_post = async (req, res, next) => {
   const { body } = req;
-  const { date, title, author, featuredImage, post_body } = body;
+  const { title, author, featuredImage, post_body, draft } = body;
 
   try {
     const newBlogPost = new BlogPost({
-      date,
+      date: new Date(),
       title,
       author,
       post_body,

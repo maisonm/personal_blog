@@ -1,3 +1,6 @@
+//Backgrounds
+import { headingBg } from './backgrounds';
+
 export const main_theme = {
   //Font Colors
   mainFontColor: '#020202',
@@ -17,7 +20,7 @@ export const main_theme = {
 
   //Box Shadows
   mainBoxShadow: '1px 1px 2px #8c8c8c',
-  mainBoxShadowNoOff: '0px 0px 2px #e6e6e6',
+  mainBoxShadowNoOff: '0px 0px 2px #b3b3b3',
 
   //Inputs
   inputBgAlt: '#e6e6e6',
@@ -26,13 +29,28 @@ export const main_theme = {
   inputBoxShadow: '0px 0px 4px #e6e6e6',
   inputBorder: '1.5px solid #e6e6e6',
   inputBorderActive: '1.5px solid #808080',
+  inputFontSizeLg: '1em',
+  inputFontSizeMd: '.95em',
+  inputFontSizeSm: '.85em',
+
+  //Buttons
+  mainBtnBg: '#e6e6e6',
+  altBtnBg: '#fa8072',
+  btnFontSizeLg: '1.2em',
+  btnFontSizeMd: '.92em',
+  btnFontSizeSm: '.85em',
+  btnFontWeight: '600',
+  btnMainFontColor: '#808080',
+  btnFontColorWhite: '#fafafa',
+  btnBorderHover: '#b3b3b3',
+  btnSuccessBg: '#0EAD69',
 
   //Labels
-  labelFontSize: '.85em',
+  labelFontSize: '.95em',
 
   //Placeholder
   placeholderFontColor: '#808080',
-  placeholderFontSize: '.85em',
+  placeholderFontSize: '.82em',
 
   //Borders
   mainBorderColor: '#e6e6e6',
@@ -50,5 +68,9 @@ export const main_theme = {
   mainIconColor: '#808080',
   mainIconColorLight: '#B4B4B4',
   secondaryIconColor: `#fa8072`,
-  secondaryIconColorLight: `#fdd3ce`
+  secondaryIconColorLight: `#fdd3ce`,
+
+  //Backgrounds
+  headingBg: `${headingBg}`,
+  headingBaseBgColor: '#e6e6e6'
 };
