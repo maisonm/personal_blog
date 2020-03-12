@@ -12,7 +12,7 @@ export const main_theme = {
 
   //Typeography
   headerType: 'Merriweather Sans',
-  bodyType: 'Montserrat',
+  bodyType: 'Inter',
   baseFontSize: '16px',
 
   //Box Shadows
@@ -22,6 +22,17 @@ export const main_theme = {
   //Inputs
   inputBgAlt: '#e6e6e6',
   inputBgLight: '#f4f4f6',
+  inputBorderRad: '3px',
+  inputBoxShadow: '0px 0px 4px #e6e6e6',
+  inputBorder: '1.5px solid #e6e6e6',
+  inputBorderActive: '1.5px solid #808080',
+
+  //Labels
+  labelFontSize: '.85em',
+
+  //Placeholder
+  placeholderFontColor: '#808080',
+  placeholderFontSize: '.85em',
 
   //Borders
   mainBorderColor: '#e6e6e6',

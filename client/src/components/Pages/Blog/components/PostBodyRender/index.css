@@ -1,0 +1,93 @@
+/* Styles for Live Preview and Post Body rendering */
+.paragraphHeader {
+  color: #020202;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px #e6e6e6 solid;
+  width: 85%;
+}
+
+.paragraphBody {
+  width: 100%;
+  letter-spacing: 0.1px;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: 'Merriweather';
+  margin-bottom: 14px;
+  font-size: 1.05em;
+  margin-bottom: 60px;
+}
+
+.paragraphBody p {
+  margin-bottom: 30px;
+  width: 85%;
+}
+
+.codeLine {
+  font-family: 'Ubuntu Mono';
+  font-size: 0.88em;
+  font-weight: 500;
+  background: #e6e6e6;
+  padding: 2px 4px;
+}
+
+.codeBlock {
+  display: flex;
+  flex-direction: column;
+  background: #e6e6e6;
+  width: 50%;
+  padding: 2px 4px;
+  font-family: 'Ubuntu Mono';
+  font-size: 0.88em;
+  font-weight: 500;
+}
+
+.imageWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.imageWrap.left {
+  align-items: flex-start;
+}
+.imageWrap.center {
+  align-items: center;
+}
+.imageWrap.right {
+  align-items: flex-end;
+}
+
+.imageDescription {
+  margin-top: 10px;
+  font-size: 0.8em;
+  max-width: 60%;
+}
+
+.imageWrap .sm {
+  width: 150px;
+}
+
+.imageWrap .md {
+  width: 300px;
+}
+
+.imageWrap .lg {
+  width: 500px;
+}
+
+.imageWrap .xl {
+  width: 650px;
+}
+
+.link {
+  color: #fa8072;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}

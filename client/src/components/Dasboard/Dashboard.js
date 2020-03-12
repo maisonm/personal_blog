@@ -10,6 +10,7 @@ import {
 //Components
 import Page from '../Layout/Page';
 import SideNav from './SideNav/SideNav';
+import AddPost from './Views/AddPost/AddPost';
 
 const Dashboard = props => {
   const [selectedView, setSelectedView] = useState('add post');
@@ -19,7 +20,7 @@ const Dashboard = props => {
   const returnSelectedView = () => {
     switch (selectedView) {
       case 'add post':
-        return <div>Add Post</div>;
+        return <AddPost />;
         break;
       case 'published posts':
         return <div>Published Posts</div>;
