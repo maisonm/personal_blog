@@ -28,26 +28,47 @@ const AddPost = ({ api }) => {
   const [postSubmitSuccess, setPostSubmitSuccess] = useState(false);
   const [error, setError] = useState(false);
 
+  const [postData, setPostData] = useState({
+    htmlString: '',
+    title: '',
+    author: '',
+    tags: '',
+    featuredImage: '',
+    postBody: ''
+  });
+
   const resetForm = () => {
     setPostSumbitLoading(false);
     setPostSubmitSuccess(false);
-    setTitle('');
-    setPostBody('');
-    setAuthor('');
-    setTags('');
-    setFeaturedImage('');
-    setHtmlString('');
+    setPostData({
+      htmlString: '',
+      title: '',
+      author: '',
+      tags: '',
+      featuredImage: '',
+      postBody: ''
+    });
+  };
+
+  const updatePostData = (value, key) => {
+    setPostData(prevData => {
+      return {
+        ...prevData,
+        [key]: value
+      };
+    });
   };
 
   const handlePostSubmit = isDraft => {
     const { fetch_config, blog } = api;
     //isDraft arg is a boolean
     const body = {
-      title,
-      author,
-      featuredImage,
+      title: postData.title,
+      author: postData.author,
+      featuredImage: postData.featuredImage,
       draft: isDraft,
-      post_body: postBody
+      post_body: postData.postBody,
+      tags: postData.tags
     };
 
     setPostSumbitLoading(true);
@@ -68,70 +89,60 @@ const AddPost = ({ api }) => {
   };
 
   const autoSave = async () => {
-    const autoSaveObject = {
-      title,
-      author,
-      tags,
-      featuredImage,
-      postBody
-    };
-
     try {
       await window.sessionStorage.setItem(
         'add_post_auto_save',
-        JSON.stringify(autoSaveObject)
+        JSON.stringify(postData)
       );
     } catch (e) {
       return;
     }
   };
 
-  //   setInterval(() => {
-  //     const currentSave = window.sessionStorage.getItem('add_post_auto_save');
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const currentSave = window.sessionStorage.getItem('add_post_auto_save');
 
-  //     const autoSaveObject = {
-  //       title,
-  //       author,
-  //       tags,
-  //       featuredImage,
-  //       postBody
-  //     };
+      if (currentSave === JSON.stringify(postData)) {
+        return;
+      } else {
+        autoSave(postData);
+      }
+    }, 20000);
 
-  //     if (currentSave === JSON.stringify(autoSaveObject)) {
-  //       return;
-  //     } else {
-  //       autoSave();
-  //     }
-  //   }, 5000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [postData]);
 
   return (
     <AddPostContainer>
       <AddPostInfoLabel htmlFor="title">Title</AddPostInfoLabel>
       <AddPostInfoInput
         type="text"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
+        value={postData.title}
+        onChange={e => updatePostData(e.target.value, 'title')}
         placeholder="enter post title"
         id="title"
       />
       <AddPostTextArea
         inputwidth="100%"
         height="400px"
-        value={postBody}
+        value={postData.postBody}
         onChange={e => {
-          setHtmlString(e.target.value);
-          setPostBody(e.target.value);
+          updatePostData(e.target.value, 'htmlString');
+          updatePostData(e.target.value, 'postBody');
         }}
       />
       <AddPostInfoLabel htmlFor="postbody">Live Preview:</AddPostInfoLabel>
-      <LivePreview id="postbody" htmlstring={htmlString} />
+      <LivePreview id="postbody" htmlstring={postData.htmlString} />
       <PostOptionWrapper>
         <PostOptionGroup width="33%">
           <AddPostInfoLabel htmlFor="author">Author:</AddPostInfoLabel>
           <AddPostInfoInput
             type="text"
-            value={author}
-            onChange={e => setAuthor(e.target.value)}
+            value={postData.author}
+            onChange={e => updatePostData(e.target.value, 'author')}
             placeholder="enter author's name"
             id="author"
             inputwidth="60%"
@@ -142,8 +153,8 @@ const AddPost = ({ api }) => {
           <AddPostInfoInput
             type="text"
             placeholder="enter tags separated by ,"
-            value={tags}
-            onChange={e => setTags(e.target.value)}
+            value={postData.tags}
+            onChange={e => updatePostData(e.target.value, 'tags')}
             id="tags"
             inputwidth="60%"
           />
@@ -155,8 +166,8 @@ const AddPost = ({ api }) => {
           <AddPostInfoInput
             type="text"
             placeholder="enter image url"
-            value={featuredImage}
-            onChange={e => setFeaturedImage(e.target.value)}
+            value={postData.featuredImage}
+            onChange={e => updatePostData(e.target.value, 'featuredImage')}
             id="featuredImage"
             inputwidth="60%"
           />
@@ -164,12 +175,14 @@ const AddPost = ({ api }) => {
       </PostOptionWrapper>
       <AddPostBtn
         type="button"
-        onClick={() => {
-          handlePostSubmit(false);
-        }}
+        onClick={postSubmitSuccess ? null : () => handlePostSubmit(false)}
       >
         <Icon icon={['far', 'plus-square']} size="lg" pSize="1em">
-          {postSubmitLoading ? <p>Sending..</p> : <p>Add Post</p>}
+          {postSubmitLoading ? (
+            <p>Sending..</p>
+          ) : (
+            <p>{postSubmitSuccess ? 'Post Added' : 'Add Post'}</p>
+          )}
         </Icon>
       </AddPostBtn>
       {postSubmitSuccess ? (
