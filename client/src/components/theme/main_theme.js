@@ -8,6 +8,7 @@ export const main_theme = {
   mainFontColorLight: '#a6a6a6',
   whiteFontColor: '#fafafa',
   secondaryFontColor: '#fa8072',
+  fontWarningColor: '#EE2E31',
 
   //Background Colors
   navigationBg: '#020202',
@@ -54,6 +55,7 @@ export const main_theme = {
 
   //Borders
   mainBorderColor: '#e6e6e6',
+  warningBorderColor: '#EE2E31',
   altBorderColor: '#fa8072',
   borderRad: '3px',
 
@@ -72,5 +74,7 @@ export const main_theme = {
 
   //Backgrounds
   headingBg: `${headingBg}`,
-  headingBaseBgColor: '#e6e6e6'
+  headingBaseBgColor: '#e6e6e6',
+  mainBgWhite: '#fafafa',
+  altBgGrey: '#a6a6a6'
 };

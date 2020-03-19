@@ -4,7 +4,7 @@ import { fadeIn } from 'react-animations';
 
 const fadeInView = keyframes(fadeIn);
 
-export const AddPostContainer = styled.div`
+export const EditPostContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@ export const AddPostContainer = styled.div`
   animation: 0.4s ${fadeInView} ease;
 `;
 
-export const AddPostInfoLabel = styled.label`
+export const EditPostInfoLabel = styled.label`
   margin-bottom: 6px;
   font-weight: 600;
   color: ${props => props.theme.mainFontColor};
@@ -21,7 +21,7 @@ export const AddPostInfoLabel = styled.label`
   margin-right: 8px;
 `;
 
-export const AddPostInfoInput = styled.input`
+export const EditPostInfoInput = styled.input`
   background: ${props => props.theme.bgAlt};
   padding: 10px 10px;
   border-radius: ${props => props.theme.inputBorderRad};
@@ -40,7 +40,7 @@ export const AddPostInfoInput = styled.input`
   }
 `;
 
-export const AddPostTextArea = styled.textarea`
+export const EditPostTextArea = styled.textarea`
   background: ${props => props.theme.bgAlt};
   padding: 10px 10px;
   border-radius: ${props => props.theme.inputBorderRad};
@@ -67,7 +67,7 @@ export const PostOptionGroup = styled.div`
   margin: 8px;
 `;
 
-export const AddPostBtn = styled.button`
+export const EditPostBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@ export const AddPostBtn = styled.button`
   }
 `;
 
-export const AddAnotherPost = styled(AddPostBtn)`
+export const EditAnotherPost = styled(EditPostBtn)`
   margin-top: 20px;
   border: none;
   background: ${props => props.theme.btnSuccessBg};
@@ -99,5 +99,18 @@ export const AddAnotherPost = styled(AddPostBtn)`
 
   &:hover {
     border: none;
+  }
+`;
+
+export const CloseEditPost = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: ${props => props.theme.secondaryFontColor};
+  margin-bottom: 20px;
+
+  & > h3 {
+    color: ${props => props.theme.mainFontColor};
   }
 `;

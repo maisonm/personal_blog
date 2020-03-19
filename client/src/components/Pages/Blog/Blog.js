@@ -12,23 +12,27 @@ const Blog = ({ api }) => {
   const [postsLoading, setPostsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const { blog } = api;
 
   useEffect(() => {
-    fetch(api.blog.get_all_posts('most_recent'))
+    blog
+      .get_all_posts({}, 'most_recent')
       .then(res => {
-        if (res.status !== 200) throw new Error('Failed to get blog posts.');
+        if (res.status !== 200) {
+          setErrorMessage(res.message);
+          throw new Error('Failed to get blog posts.');
+        }
         return res.json();
       })
       .then(posts => setPosts(posts))
       .catch(error => {
         setError(true);
-        setErrorMessage(error);
       });
   }, []);
 
   return (
     <Page pageTitle="Maison's Posts">
-      {posts ? <BlogPosts blogPosts={posts} /> : null}
+      {posts ? <BlogPosts blogPosts={posts} dashboard={false} /> : null}
     </Page>
   );
 };

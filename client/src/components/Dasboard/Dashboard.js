@@ -12,6 +12,7 @@ import {
 import Page from '../Layout/Page';
 import SideNav from './SideNav/SideNav';
 import AddPost from './Views/AddPost/AddPost';
+import PublishedPosts from './Views/PublishedPosts/PublishedPosts';
 import InjectApiRoutes from '../Hoc/InjectApiRoutes';
 
 const Dashboard = ({ api }) => {
@@ -25,7 +26,7 @@ const Dashboard = ({ api }) => {
         return <AddPost api={api} />;
         break;
       case 'published posts':
-        return <div>Published Posts</div>;
+        return <PublishedPosts api={api} />;
         break;
       case 'drafts':
         return <div>Drafts</div>;

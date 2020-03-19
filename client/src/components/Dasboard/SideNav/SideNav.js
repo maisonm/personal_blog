@@ -92,32 +92,6 @@ const SideNav = ({ setView }) => {
       </Navlink>
       <Navlink
         onClick={() => {
-          setView('manage posts');
-          setSelectedView('manage posts');
-        }}
-      >
-        <Icon
-          icon={['far', 'list-alt']}
-          size="xl"
-          color="mainIconColor"
-          cursor="pointer"
-          hovercolor="secondaryIconColor"
-          active={selectedView === 'manage posts' ? true : false}
-        >
-          <span> Manage Posts </span>
-        </Icon>
-        {selectedView === 'manage posts' ? (
-          <IconContainer>
-            <Icon
-              icon={['far', 'arrow-alt-circle-right']}
-              size="lg"
-              color="secondaryFontColor"
-            />
-          </IconContainer>
-        ) : null}
-      </Navlink>
-      <Navlink
-        onClick={() => {
           setView('metrics');
           setSelectedView('metrics');
         }}

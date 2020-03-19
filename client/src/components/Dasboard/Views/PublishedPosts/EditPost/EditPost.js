@@ -1,42 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 
 //Styles
 import {
-  AddPostContainer,
-  AddPostInfoInput,
-  AddPostInfoLabel,
-  AddPostTextArea,
+  EditPostContainer,
+  EditPostInfoLabel,
+  EditPostInfoInput,
+  EditPostTextArea,
+  EditPostBtn,
+  EditAnotherPost,
   PostOptionWrapper,
   PostOptionGroup,
-  AddPostBtn,
-  AddAnotherPost
+  CloseEditPost
 } from './styles';
 
 //Components
-import LivePreview from './LivePreview/LivePreview';
-import Icon from '../../../Icons/Icon';
+import LivePreview from '../../AddPost/LivePreview/LivePreview';
+import Icon from '../../../../Icons/Icon';
 
-const AddPost = ({ api }) => {
+const EditPost = ({ post, closeEditPost, api }) => {
   const [postSubmitLoading, setPostSumbitLoading] = useState(false);
   const [postSubmitSuccess, setPostSubmitSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  const { fetch_config, blog } = api;
+
   const [postData, setPostData] = useState({
-    htmlString: '',
-    title: '',
-    author: '',
-    tags: '',
-    featuredImage: '',
-    postBody: '',
-    description: ''
+    postId: post._id,
+    htmlString: post.post_body,
+    title: post.title,
+    author: post.author,
+    tags: post.tags.toString(),
+    featuredImage: post.featured_image,
+    postBody: post.post_body,
+    description: post.description
   });
 
   const resetForm = () => {
     setPostSumbitLoading(false);
     setPostSubmitSuccess(false);
     setPostData({
+      postId: '',
       htmlString: '',
       title: '',
       author: '',
@@ -56,71 +61,38 @@ const AddPost = ({ api }) => {
     });
   };
 
-  const handlePostSubmit = isDraft => {
-    const { fetch_config, blog } = api;
-    //isDraft arg is a boolean
-    const body = {
-      title: postData.title,
-      author: postData.author,
-      featuredImage: postData.featuredImage,
-      draft: isDraft,
-      post_body: postData.postBody,
-      tags: postData.tags,
-      description: postData.description
-    };
-
-    setPostSumbitLoading(true);
-
-    blog
-      .add_post(fetch_config('POST', body))
-      .then(res => {
-        setPostSumbitLoading(false);
-        if (res.status === 200) {
-          setPostSubmitSuccess(true);
-        } else {
-          setError(true);
-          setErrorMessage(res.message);
-          setPostSubmitSuccess(false);
-        }
-      })
-      .catch(error => {
-        setError(true);
-        setPostSubmitSuccess(false);
-        setPostSumbitLoading(false);
-      });
-  };
-
-  const autoSave = async () => {
-    try {
-      await window.sessionStorage.setItem(
-        'add_post_auto_save',
-        JSON.stringify(postData)
-      );
-    } catch (e) {
-      return;
-    }
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const currentSave = window.sessionStorage.getItem('add_post_auto_save');
-
-      if (currentSave === JSON.stringify(postData)) {
-        return;
-      } else {
-        autoSave(postData);
+  const handlePostSubmit = () => {
+    let body = {
+      updatedPost: {
+        title: postData.title,
+        author: postData.author,
+        tags: postData.tags,
+        featuredImage: postData.featuredImage,
+        post_body: postData.postBody,
+        description: postData.description
       }
-    }, 20000);
-
-    return () => {
-      clearInterval(intervalId);
     };
-  }, [postData]);
+    blog
+      .update_post(fetch_config('PUT', body), postData.postId)
+      .then(res => console.log(res));
+  };
 
   return (
-    <AddPostContainer>
-      <AddPostInfoLabel htmlFor="title">Title</AddPostInfoLabel>
-      <AddPostInfoInput
+    <EditPostContainer>
+      <CloseEditPost onClick={() => closeEditPost()}>
+        <h3>Edit Post</h3>
+        <Icon
+          icon={['far', 'plus-square']}
+          size="lg"
+          pSize=".85em"
+          hovercolor="mainIconColor"
+          cursor="pointer"
+        >
+          Close Edit
+        </Icon>
+      </CloseEditPost>
+      <EditPostInfoLabel htmlFor="title">Title</EditPostInfoLabel>
+      <EditPostInfoInput
         type="text"
         value={postData.title}
         onChange={e => updatePostData(e.target.value, 'title')}
@@ -128,15 +100,15 @@ const AddPost = ({ api }) => {
         id="title"
       />
 
-      <AddPostInfoLabel htmlFor="description">Description</AddPostInfoLabel>
-      <AddPostInfoInput
+      <EditPostInfoLabel htmlFor="description">Description</EditPostInfoLabel>
+      <EditPostInfoInput
         value={postData.description}
         onChange={e => updatePostData(e.target.value, 'description')}
         placeholder="enter description"
         id="description"
       />
-      <AddPostInfoLabel htmlFor="body">Body</AddPostInfoLabel>
-      <AddPostTextArea
+      <EditPostInfoLabel htmlFor="body">Body</EditPostInfoLabel>
+      <EditPostTextArea
         id="body"
         inputwidth="100%"
         height="400px"
@@ -146,12 +118,12 @@ const AddPost = ({ api }) => {
           updatePostData(e.target.value, 'postBody');
         }}
       />
-      <AddPostInfoLabel htmlFor="postbody">Live Preview:</AddPostInfoLabel>
+      <EditPostInfoLabel htmlFor="postbody">Live Preview:</EditPostInfoLabel>
       <LivePreview id="postbody" htmlstring={postData.htmlString} />
       <PostOptionWrapper>
         <PostOptionGroup width="33%">
-          <AddPostInfoLabel htmlFor="author">Author:</AddPostInfoLabel>
-          <AddPostInfoInput
+          <EditPostInfoLabel htmlFor="author">Author:</EditPostInfoLabel>
+          <EditPostInfoInput
             type="text"
             value={postData.author}
             onChange={e => updatePostData(e.target.value, 'author')}
@@ -161,8 +133,8 @@ const AddPost = ({ api }) => {
           />
         </PostOptionGroup>
         <PostOptionGroup width="33%">
-          <AddPostInfoLabel htmlFor="tags">Tags:</AddPostInfoLabel>
-          <AddPostInfoInput
+          <EditPostInfoLabel htmlFor="tags">Tags:</EditPostInfoLabel>
+          <EditPostInfoInput
             type="text"
             placeholder="enter tags separated by ,"
             value={postData.tags}
@@ -172,10 +144,10 @@ const AddPost = ({ api }) => {
           />
         </PostOptionGroup>
         <PostOptionGroup width="33%">
-          <AddPostInfoLabel htmlFor="featuredImage">
+          <EditPostInfoLabel htmlFor="featuredImage">
             Feat. Image:
-          </AddPostInfoLabel>
-          <AddPostInfoInput
+          </EditPostInfoLabel>
+          <EditPostInfoInput
             type="text"
             placeholder="enter image url"
             value={postData.featuredImage}
@@ -185,34 +157,35 @@ const AddPost = ({ api }) => {
           />
         </PostOptionGroup>
       </PostOptionWrapper>
-      <AddPostBtn
+      <EditPostBtn
         type="button"
         onClick={postSubmitSuccess ? null : () => handlePostSubmit(false)}
       >
         <Icon icon={['far', 'plus-square']} size="lg" pSize="1em">
           {postSubmitLoading ? (
-            <p>Sending..</p>
+            <span>Sending..</span>
           ) : (
-            <p>{postSubmitSuccess ? 'Post Added' : 'Add Post'}</p>
+            <span>{postSubmitSuccess ? 'Post Added' : 'Add Post'}</span>
           )}
         </Icon>
-      </AddPostBtn>
+      </EditPostBtn>
       {postSubmitSuccess ? (
-        <AddAnotherPost
+        <EditAnotherPost
           type="button"
           onClick={() => {
             resetForm();
           }}
         >
           Success! Add another post?
-        </AddAnotherPost>
+        </EditAnotherPost>
       ) : null}
-    </AddPostContainer>
+    </EditPostContainer>
   );
 };
 
-export default AddPost;
+export default EditPost;
 
-AddPost.propTypes = {
-  api: propTypes.object.isRequired
+EditPost.propTypes = {
+  post: propTypes.object.isRequired,
+  closeEditPost: propTypes.func.isRequired
 };

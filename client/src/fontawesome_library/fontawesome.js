@@ -11,7 +11,9 @@ import {
   faStickyNote,
   faListAlt,
   faChartBar,
-  faArrowAltCircleRight
+  faArrowAltCircleRight,
+  faMinusSquare,
+  faTimesCircle
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -21,5 +23,7 @@ library.add(
   faPlayCircle,
   faListAlt,
   faChartBar,
-  faArrowAltCircleRight
+  faArrowAltCircleRight,
+  faMinusSquare,
+  faTimesCircle
 );
