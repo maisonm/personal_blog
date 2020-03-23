@@ -12,11 +12,12 @@ import {
 import Page from '../Layout/Page';
 import SideNav from './SideNav/SideNav';
 import AddPost from './Views/AddPost/AddPost';
+import Manage from './Views/Manage/Manage';
 import PublishedPosts from './Views/PublishedPosts/PublishedPosts';
 import InjectApiRoutes from '../Hoc/InjectApiRoutes';
 
 const Dashboard = ({ api }) => {
-  const [selectedView, setSelectedView] = useState('add post');
+  const [selectedView, setSelectedView] = useState('manage');
 
   const selectedViewSelection = view => setSelectedView(view);
 
@@ -31,8 +32,8 @@ const Dashboard = ({ api }) => {
       case 'drafts':
         return <div>Drafts</div>;
         break;
-      case 'manage posts':
-        return <div>manage posts</div>;
+      case 'manage':
+        return <Manage api={api} />;
         break;
       case 'metrics':
         return <div>Metrics</div>;

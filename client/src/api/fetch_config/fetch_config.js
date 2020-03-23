@@ -1,4 +1,4 @@
-export const fetch_config = (method, body) => {
+export const fetch_config = (method, body, auth) => {
   const config = {
     method,
     headers: {

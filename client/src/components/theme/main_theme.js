@@ -8,7 +8,7 @@ export const main_theme = {
   mainFontColorLight: '#a6a6a6',
   whiteFontColor: '#fafafa',
   secondaryFontColor: '#fa8072',
-  fontWarningColor: '#EE2E31',
+  fontWarningColor: '#F56960',
 
   //Background Colors
   navigationBg: '#020202',
@@ -55,9 +55,11 @@ export const main_theme = {
 
   //Borders
   mainBorderColor: '#e6e6e6',
-  warningBorderColor: '#EE2E31',
+  successBorderColor: '#0EAD69',
+  warningBorderColor: '#F56960',
   altBorderColor: '#fa8072',
   borderRad: '3px',
+  borderBottomColor: 'rgba(0,0,0,0.2)',
 
   //Hover Transition
   hoverTrans: '.3s ease all',
@@ -76,5 +78,6 @@ export const main_theme = {
   headingBg: `${headingBg}`,
   headingBaseBgColor: '#e6e6e6',
   mainBgWhite: '#fafafa',
-  altBgGrey: '#a6a6a6'
+  altBgGrey: '#a6a6a6',
+  successBg: '#0EAD69'
 };

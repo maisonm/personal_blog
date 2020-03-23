@@ -1,4 +1,4 @@
-const BlogPost = require('../../models/blog/blog_post');
+const BlogPost = require('../../models/blog/BlogPost');
 const date_ = require('../utils/date_');
 
 exports.add_blog_post = async (req, res, next) => {
