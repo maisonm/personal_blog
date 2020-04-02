@@ -76,6 +76,7 @@ export const main_theme = {
   secondaryIconColorLight: `#fdd3ce`,
 
   //Backgrounds
+  heroBg: `${headingBg}`,
   headingBg: `${headingBg}`,
   headingBaseBgColor: '#e6e6e6',
   mainBgWhite: '#fafafa',

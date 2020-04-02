@@ -11,8 +11,8 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   animation: ${props => props.theme.animationTrans} ${pageAnimationOnEnter};
-  padding: 30px;
-  padding-top: 60px;
+  padding: ${props => (props.noheader ? '0px' : '30px')};
+  padding-top: ${props => (props.noheader ? '' : '60px')};
 `;
 
 export const PageTitle = styled.div`
@@ -33,7 +33,7 @@ export const PageTitle = styled.div`
 
 export const ChildrenContainer = styled.div`
   width: 100%;
-  padding: 6px;
+  padding: ${props => (props.noheader ? '0px' : '6px')};
   display: flex;
   flex-direction: column;
   justify-content: center;
