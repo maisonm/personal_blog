@@ -9,6 +9,7 @@ export const main_theme = {
   whiteFontColor: '#fafafa',
   secondaryFontColor: '#fa8072',
   fontWarningColor: '#F56960',
+  fontSuccessColor: '#0EAD69',
 
   //Background Colors
   navigationBg: '#020202',

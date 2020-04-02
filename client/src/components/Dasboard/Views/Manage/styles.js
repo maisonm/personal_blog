@@ -14,6 +14,7 @@ export const ManageControl = styled.div`
   flex-direction: column;
   align-items: flex-start;
   color: ${props => props.theme.mainFontColorLight};
+  margin-bottom: 14px;
 
   & > h5 {
     padding-bottom: 6px;

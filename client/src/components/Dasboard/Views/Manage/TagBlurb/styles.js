@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components';
-import { fadeIn } from 'react-animations';
+import { fadeIn, bounceIn } from 'react-animations';
 
 const fadeInAni = keyframes(fadeIn);
+const bounceInAni = keyframes(bounceIn);
 
 export const TagBlurbContainer = styled.div`
   width: 50%;
@@ -21,6 +22,7 @@ export const Blurb = styled.div`
   font-weight: 500;
   cursor: pointer;
   transition: ${props => props.theme.hoverTrans};
+  animation: ${bounceInAni} 0.3s ease;
 
   &:hover {
     transition: ${props => props.theme.hoverTrans};
@@ -50,4 +52,40 @@ export const SaveTags = styled.div`
   position: absolute;
   bottom: -45px;
   left: 0px;
+`;
+
+export const AddTagsSuccess = styled.div`
+  color: ${props => props.theme.fontSuccessColor};
+  font-size: 0.9em;
+  font-weight: 600;
+  animation: ${fadeInAni} 0.3s ease;
+
+  & > span {
+    color: ${props => props.theme.mainFontColorMedium};
+    cursor: pointer;
+    transition: ${props => props.theme.hoverTrans};
+
+    &:hover {
+      transition: ${props => props.theme.hoverTrans};
+      color: ${props => props.theme.mainFontColorLight};
+    }
+  }
+`;
+
+export const AddTagsError = styled.div`
+  color: ${props => props.theme.fontWarningColor};
+  font-size: 0.9em;
+  font-weight: 600;
+  animation: ${fadeInAni} 0.3s ease;
+
+  & > span {
+    color: ${props => props.theme.mainFontColorMedium};
+    cursor: pointer;
+    transition: ${props => props.theme.hoverTrans};
+
+    &:hover {
+      transition: ${props => props.theme.hoverTrans};
+      color: ${props => props.theme.mainFontColorLight};
+    }
+  }
 `;

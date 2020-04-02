@@ -4,8 +4,14 @@ exports.add_tags = async (req, res, next) => {
   const { body } = req;
   const { post_tags } = body;
   try {
+    let postTagArray = [];
+
+    post_tags.forEach(tag => {
+      postTagArray.push(tag[0]);
+    });
+
     const Tags = new TagsSchema({
-      tags: post_tags
+      tags: postTagArray
     });
 
     const addTags = await Tags.save();
