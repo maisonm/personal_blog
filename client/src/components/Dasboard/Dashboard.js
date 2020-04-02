@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import propTypes from 'prop-types';
 
 //Styles
 import {
@@ -10,25 +11,29 @@ import {
 //Components
 import Page from '../Layout/Page';
 import SideNav from './SideNav/SideNav';
+import AddPost from './Views/AddPost/AddPost';
+import Manage from './Views/Manage/Manage';
+import PublishedPosts from './Views/PublishedPosts/PublishedPosts';
+import InjectApiRoutes from '../Hoc/InjectApiRoutes';
 
-const Dashboard = props => {
-  const [selectedView, setSelectedView] = useState('add post');
+const Dashboard = ({ api }) => {
+  const [selectedView, setSelectedView] = useState('manage');
 
   const selectedViewSelection = view => setSelectedView(view);
 
   const returnSelectedView = () => {
     switch (selectedView) {
       case 'add post':
-        return <div>Add Post</div>;
+        return <AddPost api={api} />;
         break;
       case 'published posts':
-        return <div>Published Posts</div>;
+        return <PublishedPosts api={api} />;
         break;
       case 'drafts':
         return <div>Drafts</div>;
         break;
-      case 'manage posts':
-        return <div>manage posts</div>;
+      case 'manage':
+        return <Manage api={api} />;
         break;
       case 'metrics':
         return <div>Metrics</div>;
@@ -48,4 +53,8 @@ const Dashboard = props => {
   );
 };
 
-export default Dashboard;
+export default InjectApiRoutes(Dashboard);
+
+Dashboard.propTypes = {
+  api: propTypes.object.isRequired
+};

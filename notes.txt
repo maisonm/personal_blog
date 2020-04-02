@@ -3,3 +3,9 @@
 -Add semantic ui search bars throughout the site but importantly the top of the nav bar.
 
 -Animate 'Javascript Developer' to change 'Javascript' to Web, Life, 
+
+-Setup performance/user tracking w/ Google Analytics: https://www.freecodecamp.org/news/performance-and-user-tracking-in-react-with-google-analytics/
+
+-Need to add ID from collections retrived from DB
+
+-Make tags render and setup splitting into arrays

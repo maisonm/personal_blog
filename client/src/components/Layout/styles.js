@@ -1,8 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 
-import { fadeIn } from 'react-animations';
+import { fadeIn, slideInDown } from 'react-animations';
 
 const pageAnimationOnEnter = keyframes`${fadeIn}`;
+const pageTitleEnter = keyframes`${slideInDown}`;
 
 export const PageContainer = styled.div`
   min-height: 100vh;
@@ -18,10 +19,15 @@ export const PageTitle = styled.div`
   width: 100%;
   color: ${props => props.theme.mainFontColorLight};
   margin-bottom: 30px;
-  margin-left: 4px;
-
+  padding: 30px 4px;
+  background-color: ${props => props.theme.headingBaseBgColor};
+  background-image: ${props => props.theme.headingBg};
+  text-align: center;
+  border-radius: ${props => props.theme.borderRad};
+  box-shadow: ${props => props.theme.mainBoxShadowNoOff};
   & > h2 {
     color: ${props => props.theme.mainFontColor};
+    animation: ${props => props.theme.animationTrans} ${pageTitleEnter};
   }
 `;
 

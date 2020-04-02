@@ -29,6 +29,8 @@ const database = mongoose.connection;
 
 /****** API ROUTES ******/
 const blog_routes = require('./routes/blog/blog_routes');
+const tags_routes = require('./routes/tags/tags_routes');
+app.use('/v1/tags', tags_routes);
 app.use('/v1/blog', blog_routes);
 
 /* ******************* */

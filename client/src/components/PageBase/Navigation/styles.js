@@ -32,8 +32,8 @@ export const NameMain = styled.div`
 export const NameUnder = styled.div`
   width: 100%;
   font-size: 0.65em;
-  margin-left: 12px;
   color: ${props => props.theme.mainFontColorLight};
+  padding-left: 24px;
 `;
 export const LinkContainer = styled.div`
   width: 24%;

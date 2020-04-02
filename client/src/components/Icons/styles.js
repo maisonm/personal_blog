@@ -12,11 +12,11 @@ export const IconContainer = styled.div`
   &:hover {
     transition: ${props => props.theme.hoverTrans};
     color: ${props =>
-      props.hoverColor ? props.hovercolor : props.theme.secondaryIconColor};
+      props.hovercolor ? props.theme[props.hovercolor] : null};
   }
 
   & > p {
-    font-size: 0.65em;
+    font-size: ${props => (props.pSize ? props.pSize : '0.65em')};
     font-weight: 500;
     margin-left: 8px;
   }

@@ -11,7 +11,12 @@ import {
   faStickyNote,
   faListAlt,
   faChartBar,
-  faArrowAltCircleRight
+  faArrowAltCircleRight,
+  faMinusSquare,
+  faTimesCircle,
+  faEye,
+  faClipboard,
+  faDotCircle
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -21,5 +26,10 @@ library.add(
   faPlayCircle,
   faListAlt,
   faChartBar,
-  faArrowAltCircleRight
+  faArrowAltCircleRight,
+  faMinusSquare,
+  faTimesCircle,
+  faEye,
+  faClipboard,
+  faDotCircle
 );

@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { slideInDown, fadeIn } from 'react-animations';
+
+const slideIn = keyframes(slideInDown);
+const fadeInAni = keyframes(fadeIn);
 
 export const BlogPostListContainer = styled.div`
   width: 100%;
@@ -8,6 +12,7 @@ export const BlogPostListContainer = styled.div`
 
 export const BlogListCard = styled.div`
   width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -17,6 +22,7 @@ export const BlogListCard = styled.div`
   height: 140px;
   cursor: pointer;
   transition: ${props => props.theme.animationTrans};
+  animation: 0.3s ease ${fadeInAni};
 
   &:hover {
     transition: ${props => props.theme.animationTrans};
@@ -24,7 +30,9 @@ export const BlogListCard = styled.div`
   }
 `;
 
-export const BlogPostHeader = styled.h3``;
+export const BlogPostHeader = styled.h3`
+  margin-bottom: 10px;
+`;
 
 export const BlogPostDescription = styled.div`
   overflow: none;
@@ -35,10 +43,11 @@ export const BlogPostDescription = styled.div`
 `;
 
 export const BlogPostInfo = styled.div`
-  width: 100%;
+  max-width: 75%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 10px;
 `;
 
 export const BlogPostInfoBox = styled.div`
@@ -46,12 +55,47 @@ export const BlogPostInfoBox = styled.div`
   font-weight: 500;
   margin-right: 14px;
   color: ${props => props.theme.secondaryFontColor};
+  max-width: 100%;
 
-  & > p span {
-    margin-right: 4px;
+  & > div {
+    display: flex;
+    color: ${props => props.theme.mainFontColorMedium};
   }
 
-  & > p span:nth-child(2) {
+  & > div span {
+    margin-right: 4px;
     color: ${props => props.theme.mainFontColorMedium};
+  }
+`;
+
+export const AreYouSureRemove = styled.div`
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: 500;
+  transition: ${props => props.theme.hoverTrans};
+  animation: 0.3s ease ${slideIn};
+
+  & > p {
+    margin-right: 12px;
+    color: ${props => props.theme.fontWarningColor};
+  }
+
+  & > button {
+    outline: none;
+    margin-right: 8px;
+    border: 2px solid ${props => props.theme.mainBorderColor};
+    padding: 2px 4px;
+    border-radius: ${props => props.theme.borderRad};
+    cursor: pointer;
+    transition: ${props => props.theme.hoverTrans};
+
+    &:hover {
+      transition: ${props => props.theme.hoverTrans};
+      box-shadow: ${props => props.theme.mainBoxShadowNoOff};
+    }
   }
 `;

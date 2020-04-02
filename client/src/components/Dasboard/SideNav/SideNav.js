@@ -9,7 +9,7 @@ import Icon from '../../Icons/Icon';
 import { Navlink, LinkContainer, IconContainer } from './styles';
 
 const SideNav = ({ setView }) => {
-  const [selectedView, setSelectedView] = useState('add post');
+  const [selectedView, setSelectedView] = useState('manage');
   return (
     <LinkContainer>
       <Navlink
@@ -66,6 +66,32 @@ const SideNav = ({ setView }) => {
       </Navlink>
       <Navlink
         onClick={() => {
+          setView('manage');
+          setSelectedView('manage');
+        }}
+      >
+        <Icon
+          icon={['far', 'dot-circle']}
+          size="xl"
+          color="mainIconColor"
+          cursor="pointer"
+          hovercolor="secondaryIconColor"
+          active={selectedView === 'manage' ? true : false}
+        >
+          <span> Manage </span>
+        </Icon>
+        {selectedView === 'manage' ? (
+          <IconContainer>
+            <Icon
+              icon={['far', 'arrow-alt-circle-right']}
+              size="lg"
+              color="secondaryFontColor"
+            />
+          </IconContainer>
+        ) : null}
+      </Navlink>
+      <Navlink
+        onClick={() => {
           setView('drafts');
           setSelectedView('drafts');
         }}
@@ -81,32 +107,6 @@ const SideNav = ({ setView }) => {
           <span> Drafts </span>
         </Icon>
         {selectedView === 'drafts' ? (
-          <IconContainer>
-            <Icon
-              icon={['far', 'arrow-alt-circle-right']}
-              size="lg"
-              color="secondaryFontColor"
-            />
-          </IconContainer>
-        ) : null}
-      </Navlink>
-      <Navlink
-        onClick={() => {
-          setView('manage posts');
-          setSelectedView('manage posts');
-        }}
-      >
-        <Icon
-          icon={['far', 'list-alt']}
-          size="xl"
-          color="mainIconColor"
-          cursor="pointer"
-          hovercolor="secondaryIconColor"
-          active={selectedView === 'manage posts' ? true : false}
-        >
-          <span> Manage Posts </span>
-        </Icon>
-        {selectedView === 'manage posts' ? (
           <IconContainer>
             <Icon
               icon={['far', 'arrow-alt-circle-right']}
