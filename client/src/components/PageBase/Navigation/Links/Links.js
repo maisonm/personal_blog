@@ -10,7 +10,7 @@ import { LinkContainer, LinkWrap } from './styles';
 //@Required: links array passed as props. Each object in the links array should contain a path and name property. Refer to propTypes definition at the bottom.
 
 const Links = ({ links }) => {
-  const [clickedLink, setClickedLink] = useState(undefined);
+  const [clickedLink, setClickedLink] = useState('Home');
   return (
     <LinkContainer>
       {links.map((link, i) => (

@@ -11,6 +11,8 @@ export const LinkContainer = styled.div`
 export const LinkWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 100%;
   border-bottom: 3px solid
     ${props =>

@@ -17,6 +17,10 @@ import bolt from './assets/bolt.svg';
 
 const navLinks = [
   {
+    path: '/',
+    name: 'Home'
+  },
+  {
     path: '/blog',
     name: 'Blog'
   },

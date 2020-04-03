@@ -37,7 +37,7 @@ export const NameUnder = styled.div`
   padding-left: 14px;
 `;
 export const LinkContainer = styled.div`
-  width: 24%;
+  width: 35%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
