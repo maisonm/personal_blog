@@ -7,6 +7,7 @@ export const main_theme = {
   //Font Colors
   mainFontColor: '#020202',
   mainFontColorMedium: '#808080',
+  mainFontColorMediumDark: '#595959',
   mainFontColorLight: '#a6a6a6',
   whiteFontColor: '#fafafa',
   secondaryFontColor: '#fa8072',
@@ -85,7 +86,7 @@ export const main_theme = {
   heroBg: `${headingBg}`,
   headingBg: `${headingBg}`,
   headingBaseBgColor: '#e6e6e6',
-  mainBgWhite: '#fafafa',
+  mainBgWhite: '#ffffff',
   altBgGrey: '#a6a6a6',
   successBg: '#0EAD69'
 };

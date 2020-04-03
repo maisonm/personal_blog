@@ -21,7 +21,7 @@ const navLinks = [
     name: 'Blog'
   },
   {
-    path: '/about-page',
+    path: '/about',
     name: 'About'
   },
   {
@@ -30,7 +30,7 @@ const navLinks = [
   },
   {
     path: '/contact',
-    name: 'Contact me'
+    name: 'Contact'
   }
 ];
 

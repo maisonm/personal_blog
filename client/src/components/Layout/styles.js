@@ -20,11 +20,10 @@ export const PageTitle = styled.div`
   color: ${props => props.theme.mainFontColorLight};
   margin-bottom: 30px;
   padding: 30px 4px;
-  background-color: ${props => props.theme.headingBaseBgColor};
+  background-color: ${props => props.theme.mainBgWhite};
   background-image: ${props => props.theme.headingBg};
   text-align: center;
   border-radius: ${props => props.theme.borderRad};
-  box-shadow: ${props => props.theme.mainBoxShadowNoOff};
   & > h2 {
     color: ${props => props.theme.mainFontColor};
     animation: ${props => props.theme.animationTrans} ${pageTitleEnter};

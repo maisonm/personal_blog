@@ -16,7 +16,9 @@ import {
   faTimesCircle,
   faEye,
   faClipboard,
-  faDotCircle
+  faDotCircle,
+  faCompass,
+  faEnvelope
 } from '@fortawesome/free-regular-svg-icons';
 
 import {
@@ -40,5 +42,7 @@ library.add(
   faDotCircle,
   faInstagram,
   faGithub,
-  faLinkedinIn
+  faLinkedinIn,
+  faCompass,
+  faEnvelope
 );

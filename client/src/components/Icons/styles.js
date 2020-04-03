@@ -18,6 +18,11 @@ export const IconContainer = styled.div`
   & > p {
     font-size: ${props => (props.pSize ? props.pSize : '0.65em')};
     font-weight: 500;
-    margin-left: 8px;
+    margin-left: 6px;
+    color: ${props => props.theme[props.pColor]};
+    & > a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 `;
