@@ -19,6 +19,12 @@ import {
   faDotCircle
 } from '@fortawesome/free-regular-svg-icons';
 
+import {
+  faInstagram,
+  faGithub,
+  faLinkedinIn
+} from '@fortawesome/free-brands-svg-icons';
+
 library.add(
   faEdit,
   faStickyNote,
@@ -31,5 +37,8 @@ library.add(
   faTimesCircle,
   faEye,
   faClipboard,
-  faDotCircle
+  faDotCircle,
+  faInstagram,
+  faGithub,
+  faLinkedinIn
 );

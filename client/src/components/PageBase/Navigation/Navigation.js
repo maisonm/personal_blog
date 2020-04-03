@@ -44,7 +44,7 @@ const Navigation = () => {
           <p>Moa</p>
         </NameMain>
         <NameUnder>
-          <p>Web Developer</p>
+          <p>Javascript Developer</p>
         </NameUnder>
       </NameContainer>
       <LinkContainer>

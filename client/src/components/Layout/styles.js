@@ -11,7 +11,7 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   animation: ${props => props.theme.animationTrans} ${pageAnimationOnEnter};
-  padding: ${props => (props.noheader ? '0px' : '30px')};
+  padding: 30px;
   padding-top: ${props => (props.noheader ? '' : '60px')};
 `;
 

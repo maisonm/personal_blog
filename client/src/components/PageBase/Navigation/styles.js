@@ -8,6 +8,7 @@ export const NavigationContainer = styled.div`
   color: ${props => props.theme.whiteFontColor};
   display: flex;
   justify-content: space-between;
+  z-index: 10000;
 `;
 export const NameContainer = styled.div`
   width: 25%;
@@ -33,7 +34,7 @@ export const NameUnder = styled.div`
   width: 100%;
   font-size: 0.65em;
   color: ${props => props.theme.mainFontColorLight};
-  padding-left: 24px;
+  padding-left: 14px;
 `;
 export const LinkContainer = styled.div`
   width: 24%;

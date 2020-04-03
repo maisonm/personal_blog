@@ -1,6 +1,8 @@
 //Backgrounds
 import { headingBg } from './backgrounds';
 
+import { animations } from './animations';
+
 export const main_theme = {
   //Font Colors
   mainFontColor: '#020202',
@@ -68,6 +70,10 @@ export const main_theme = {
   //Animations
   animationTrans: '.3s ease',
   mainBezier: 'cubic-bezier(.53,1.28,.33,1.45)',
+  fadeIn: animations.fade_in,
+  bounceInLeft: animations.bounce_in_left,
+  bounceInRight: animations.bounce_in_right,
+  bounceInUp: animations.bounce_in_up,
 
   //Icons
   mainIconColor: '#808080',

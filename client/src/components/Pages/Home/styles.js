@@ -7,6 +7,7 @@ const fade = keyframes(fadeIn);
 
 export const HomePageHero = styled.div`
   min-height: 100vh;
+  position: relative;
   width: 100%;
   margin: 0;
   background: ${props => props.theme.heroBg};
@@ -15,7 +16,6 @@ export const HomePageHero = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: -60px;
-  z-index: -10;
 `;
 
 export const HomePageIntro = styled.div`
@@ -36,4 +36,10 @@ export const HomePageIntroBlurb = styled.div`
   font-size: 0.95em;
   animation: 1.6s ease-in ${props => (props.offset ? slideLeft : slideRight)};
   animation-fill-mode: forwards;
+`;
+
+export const LatestPostsHeader = styled.div`
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
 `;

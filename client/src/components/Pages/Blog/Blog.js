@@ -7,7 +7,7 @@ import BlogPosts from './components/BlogPosts/BlogPosts';
 //HoC
 import GlobalApiRoutes from '../../Hoc/InjectApiRoutes';
 
-const Blog = ({ api }) => {
+const Blog = ({ api, pageTitle, noheader }) => {
   const [posts, setPosts] = useState([]);
   const [postsLoading, setPostsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -31,7 +31,10 @@ const Blog = ({ api }) => {
   }, []);
 
   return (
-    <Page pageTitle="Maison's Posts">
+    <Page
+      pageTitle={pageTitle ? pageTitle : `Maison's Posts`}
+      noheader={noheader}
+    >
       {posts ? <BlogPosts blogPosts={posts} dashboard={false} /> : null}
     </Page>
   );

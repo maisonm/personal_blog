@@ -32,6 +32,8 @@ const Icon = ({
     case 'xl':
       iconSize = '1.2em';
       break;
+    case 'xxl':
+      iconSize = '1.5em';
   }
   return (
     <IconContainer
