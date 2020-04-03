@@ -28,7 +28,10 @@ const Home = props => {
             <p>Feel free to email me anytime if you have a question!</p>
           </HomePageIntroBlurb>
           <HomePageIntroBlurb>
-            <p>This blog was built with React, Express, MongoDb and love.</p>
+            <p>
+              This blog was built with React, Express, MongoDb and is hosted on
+              an AWS Elastic Beanstalk enviroment.
+            </p>
           </HomePageIntroBlurb>
         </HomePageIntro>
         <SocialLinks />
