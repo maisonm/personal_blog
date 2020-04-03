@@ -25,7 +25,11 @@ const Home = props => {
             </p>
           </HomePageIntroBlurb>
           <HomePageIntroBlurb offset={true}>
-            <p>Feel free to email me anytime if you have a question!</p>
+            <p>You can contact me any time via email!</p>
+            <p>
+              I am available 24/7, so feel free to contact me with any
+              questions.
+            </p>
           </HomePageIntroBlurb>
           <HomePageIntroBlurb>
             <p>
