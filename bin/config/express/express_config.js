@@ -17,7 +17,7 @@ module.exports = () => {
 
   //Serve build folder of client
   //Terenary for production (NODE_ENV)*****
-  //   app.use(express.static(path.join(__dirname, '../../../client/build')));
+  app.use(express.static(path.join(__dirname, '../../../client/build')));
 
   //Server index.html for any non api routes (catch-all)
   app.get('*', (req, res) => {
