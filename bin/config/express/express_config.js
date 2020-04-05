@@ -21,7 +21,7 @@ module.exports = () => {
 
   // //Server index.html for any non api routes (catch-all)
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    res.sendFile(path.join(__dirname, '../../client/build/index.html'));
   });
 
   //Middlewares
