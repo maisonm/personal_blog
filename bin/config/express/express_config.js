@@ -17,9 +17,7 @@ module.exports = () => {
 
   //Serve build folder of client
   //Terenary for production (NODE_ENV)*****
-  app.use(
-    express.static(path.join(__dirname, '../../../client/build/index.html'))
-  );
+  app.use(express.static(path.join(__dirname, '../../../client/build')));
 
   console.log();
 
