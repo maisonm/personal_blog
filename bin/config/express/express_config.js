@@ -20,9 +20,9 @@ module.exports = () => {
   app.use(express.static(path.join(__dirname, '../client/build')));
 
   // //Server index.html for any non api routes (catch-all)
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.join(__dirname, '../../../client/build/index.html'));
-  // });
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
 
   //Middlewares
   app.use(express.urlencoded({ extended: true }));
