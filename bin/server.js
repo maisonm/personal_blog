@@ -38,6 +38,8 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+// console.log(path.join(__dirname, '../client/build/index.html'));
+
 /****** ERROR HANDLING MIDDLEWARE ******/
 const error_handler = require('./middleware/errors/api_errors');
 app.use(error_handler);
