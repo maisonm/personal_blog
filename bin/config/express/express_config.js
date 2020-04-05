@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const cors = require('cors');
 //Allows global access to variables in our .env file
 require('dotenv').config({
-  path: path.join(__dirname, '../../utils/environment/.env')
+  path: path.join(__dirname, '../../utils/environment/.env'),
 });
 
 module.exports = () => {
@@ -20,9 +20,9 @@ module.exports = () => {
   app.use(express.static(path.join(__dirname, '../client/build')));
 
   // //Server index.html for any non api routes (catch-all)
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-  // });
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
 
   //Middlewares
   app.use(express.urlencoded({ extended: true }));
