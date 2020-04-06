@@ -40,7 +40,7 @@ export const NameUnder = styled.div`
   padding-left: 14px;
 `;
 export const LinkContainer = styled.div`
-  width: 35%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

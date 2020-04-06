@@ -1,9 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { bounceInLeft, bounceInRight, fadeIn } from 'react-animations';
-
-const slideLeft = keyframes(bounceInLeft);
-const slideRight = keyframes(bounceInRight);
-const fade = keyframes(fadeIn);
 
 export const HomePageHero = styled.div`
   min-height: 100vh;
@@ -15,7 +11,8 @@ export const HomePageHero = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: -60px;
+  margin-top: -70px;
+  animation: 0.5s ease-in ${(props) => props.theme.fadeIn};
 `;
 
 // export const HomePageIntro = styled.div`

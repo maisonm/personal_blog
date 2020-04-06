@@ -29,10 +29,6 @@ const navLinks = [
     name: 'About',
   },
   {
-    path: '/portfolio',
-    name: 'Portfolio',
-  },
-  {
     path: '/contact',
     name: 'Contact',
   },

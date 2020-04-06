@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //Styles
 import { SocialLinkContainer } from './styles';
@@ -6,7 +7,7 @@ import { SocialLinkContainer } from './styles';
 //Components
 import Icon from '../../../../Icons/Icon';
 
-const SocialLinks = props => {
+const SocialLinks = (props) => {
   return (
     <SocialLinkContainer>
       <a href="https://github.com/maisonm" target="_blank">
@@ -36,6 +37,15 @@ const SocialLinks = props => {
           hovercolor="secondaryIconColor"
         />
       </a>
+      <Link to="/contact">
+        <Icon
+          icon={['far', 'envelope']}
+          size="xxl"
+          color="mainIconColor"
+          cursor="pointer"
+          hovercolor="secondaryIconColor"
+        />
+      </Link>
     </SocialLinkContainer>
   );
 };
