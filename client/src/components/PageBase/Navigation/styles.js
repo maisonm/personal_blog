@@ -20,17 +20,26 @@ export const NameContainer = styled.div`
 
 export const NameMain = styled.div`
   display: flex;
-  & > p {
-    font-size: 1em;
-    font-weight: 400;
-    font-weight: 600;
-  }
+`;
 
-  & > div {
-    margin-left: 8px;
-    margin-right: 8px;
-    border: 1.5px solid ${(props) => props.theme.borderSecondaryColor};
-  }
+export const NameLeft = styled.p`
+  font-size: 1em;
+  font-weight: 400;
+  font-weight: 600;
+  margin: 0;
+`;
+
+export const NameRight = styled.p`
+  font-size: 1em;
+  font-weight: 400;
+  font-weight: 600;
+  margin: 0;
+`;
+
+export const NameDivide = styled.div`
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 1.5px solid ${(props) => props.theme.borderSecondaryColor};
 `;
 
 export const NameUnder = styled.div`
@@ -40,9 +49,16 @@ export const NameUnder = styled.div`
   padding-left: 14px;
 `;
 export const LinkContainer = styled.div`
-  width: 25%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   animation: 1s ease-in ${(props) => props.theme.bounceInRight};
+`;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
 `;

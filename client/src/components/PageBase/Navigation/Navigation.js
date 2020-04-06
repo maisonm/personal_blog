@@ -7,7 +7,14 @@ import {
   NameMain,
   NameUnder,
   LinkContainer,
+  NameLeft,
+  NameRight,
+  SearchContainer,
+  NameDivide,
 } from './styles';
+
+//Semantic Search
+import Search from '../../SemanticSearch/Search';
 
 //Components
 import Links from './Links/Links';
@@ -39,13 +46,25 @@ const Navigation = () => {
     <NavigationContainer>
       <NameContainer>
         <NameMain>
-          <p>M</p>
-          <div></div>
-          <p>M</p>
+          <NameLeft>M</NameLeft>
+          <NameDivide></NameDivide>
+          <NameRight>M</NameRight>
         </NameMain>
       </NameContainer>
       <LinkContainer>
         <Links links={navLinks} />
+        <SearchContainer>
+          <Search
+            data={[
+              {
+                title: 'Hello Clarice',
+              },
+              {
+                title: 'James Jones',
+              },
+            ]}
+          />
+        </SearchContainer>
       </LinkContainer>
     </NavigationContainer>
   );

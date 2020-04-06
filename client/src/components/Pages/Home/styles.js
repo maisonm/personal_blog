@@ -50,6 +50,7 @@ export const HeroHeader = styled.div`
   & > p {
     font-size: 2.2em;
     font-weight: 400;
+    margin: 0;
   }
 
   & > p:nth-child(1) {
