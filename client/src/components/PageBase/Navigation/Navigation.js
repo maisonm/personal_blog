@@ -6,7 +6,7 @@ import {
   NameContainer,
   NameMain,
   NameUnder,
-  LinkContainer
+  LinkContainer,
 } from './styles';
 
 //Components
@@ -18,24 +18,24 @@ import bolt from './assets/bolt.svg';
 const navLinks = [
   {
     path: '/',
-    name: 'Home'
+    name: 'Home',
   },
   {
     path: '/blog',
-    name: 'Blog'
+    name: 'Blog',
   },
   {
     path: '/about',
-    name: 'About'
+    name: 'About',
   },
   {
     path: '/portfolio',
-    name: 'Portfolio'
+    name: 'Portfolio',
   },
   {
     path: '/contact',
-    name: 'Contact'
-  }
+    name: 'Contact',
+  },
 ];
 
 const Navigation = () => {
@@ -43,13 +43,10 @@ const Navigation = () => {
     <NavigationContainer>
       <NameContainer>
         <NameMain>
-          <p>Maison</p>
-          <img src={bolt} alt="bolt logo" />
-          <p>Moa</p>
+          <p>M</p>
+          <div></div>
+          <p>M</p>
         </NameMain>
-        <NameUnder>
-          <p>Javascript Developer</p>
-        </NameUnder>
       </NameContainer>
       <LinkContainer>
         <Links links={navLinks} />

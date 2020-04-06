@@ -1,11 +1,11 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const NavigationContainer = styled.div`
-  background: ${props => props.theme.navigationBg};
+  background: ${(props) => props.theme.navigationBg};
   width: 100%;
   padding: 0px 40px;
   height: 60px;
-  color: ${props => props.theme.whiteFontColor};
+  color: ${(props) => props.theme.whiteFontColor};
   display: flex;
   justify-content: space-between;
   z-index: 10000;
@@ -15,25 +15,28 @@ export const NameContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: 1s ease-in ${(props) => props.theme.bounceInLeft};
 `;
 
 export const NameMain = styled.div`
   display: flex;
-  & > img {
-    width: 8px;
-    margin-left: 6px;
-    margin-right: 6px;
+  & > p {
+    font-size: 1em;
+    font-weight: 400;
+    font-weight: 600;
   }
 
-  & > p {
-    font-size: 1.2em;
+  & > div {
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 1.5px solid ${(props) => props.theme.borderSecondaryColor};
   }
 `;
 
 export const NameUnder = styled.div`
   width: 100%;
   font-size: 0.65em;
-  color: ${props => props.theme.mainFontColorLight};
+  color: ${(props) => props.theme.mainFontColorLight};
   padding-left: 14px;
 `;
 export const LinkContainer = styled.div`
@@ -41,4 +44,5 @@ export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  animation: 1s ease-in ${(props) => props.theme.bounceInRight};
 `;

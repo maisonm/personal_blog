@@ -59,6 +59,7 @@ export const main_theme = {
 
   //Borders
   mainBorderColor: '#e6e6e6',
+  borderSecondaryColor: '#fa8072',
   successBorderColor: '#0EAD69',
   warningBorderColor: '#F56960',
   altBorderColor: '#fa8072',
@@ -75,6 +76,8 @@ export const main_theme = {
   bounceInLeft: animations.bounce_in_left,
   bounceInRight: animations.bounce_in_right,
   bounceInUp: animations.bounce_in_up,
+  slideInLeft: animations.slide_in_left,
+  slideInRight: animations.slide_in_right,
 
   //Icons
   mainIconColor: '#808080',
@@ -88,5 +91,5 @@ export const main_theme = {
   headingBaseBgColor: '#e6e6e6',
   mainBgWhite: '#ffffff',
   altBgGrey: '#a6a6a6',
-  successBg: '#0EAD69'
+  successBg: '#0EAD69',
 };
