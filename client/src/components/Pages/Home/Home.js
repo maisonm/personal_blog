@@ -5,7 +5,7 @@ import {
   HomePageHero,
   HomePageIntro,
   HomePageIntroBlurb,
-  LatestPostsHeader
+  LatestPostsHeader,
 } from './styles';
 
 //Components
@@ -13,7 +13,7 @@ import Page from '../../Layout/Page';
 import Blog from '../Blog/Blog';
 import SocialLinks from './Components/SocialMediaLinks/SocialLinks';
 
-const Home = props => {
+const Home = (props) => {
   return (
     <Page noheader={true} pageTitle="">
       <HomePageHero>
