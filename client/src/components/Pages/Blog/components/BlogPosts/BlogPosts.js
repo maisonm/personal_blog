@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import propTypes from 'prop-types';
 
 //Blog Posts List component: renders out a list of blog posts
@@ -14,7 +15,7 @@ import {
   BlogPostDescription,
   BlogPostInfo,
   BlogPostInfoBox,
-  AreYouSureRemove
+  AreYouSureRemove,
 } from './styles';
 
 //FA
@@ -26,6 +27,11 @@ const BlogPosts = ({ blogPosts, dashboard, removePost, showEditPost }) => {
   const [showAreYouSure, setShowAreYouSure] = useState(null);
   const [postIdToRemove, setPostIdToRemove] = useState(false);
   const [postToRemoveTitle, setPostToRemoveTitle] = useState(null);
+  const [redirectPost, setRedirectPost] = useState({
+    redirect: false,
+    post_id: null,
+    post: null,
+  });
 
   useEffect(() => {
     if (fireRemovePost) {
@@ -35,6 +41,15 @@ const BlogPosts = ({ blogPosts, dashboard, removePost, showEditPost }) => {
 
   return (
     <BlogPostListContainer>
+      {redirectPost.redirect ? (
+        <Redirect
+          push
+          to={{
+            pathname: `/blog/post/react-rendering-arrays/?postid=${redirectPost.post_id}`,
+            post: redirectPost.post,
+          }}
+        />
+      ) : null}
       {showAreYouSure ? (
         <AreYouSureRemove>
           <p>You are removing "{postToRemoveTitle}". Are you sure?</p>
@@ -61,7 +76,16 @@ const BlogPosts = ({ blogPosts, dashboard, removePost, showEditPost }) => {
       ) : null}
       {posts
         ? posts.map((post, i) => (
-            <BlogListCard key={i}>
+            <BlogListCard
+              key={i}
+              onClick={() => {
+                setRedirectPost({
+                  redirect: true,
+                  post_id: post._id,
+                  post: post,
+                });
+              }}
+            >
               <BlogPostHeader>{post.title}</BlogPostHeader>
               <BlogPostDescription>
                 This is a blog post that describes something really cool. It
@@ -140,5 +164,5 @@ BlogPosts.propTypes = {
   // blogPosts: propTypes.object.isRequired,
   dashboard: propTypes.bool.isRequired,
   removePost: propTypes.func,
-  showEditPost: propTypes.func
+  showEditPost: propTypes.func,
 };

@@ -88,6 +88,7 @@ export const main_theme = {
   //Backgrounds
   heroBg: `${headingBg}`,
   headingBg: `${headingBg}`,
+  bgDark: '#020202',
   headingBaseBgColor: '#e6e6e6',
   mainBgWhite: '#ffffff',
   altBgGrey: '#a6a6a6',
