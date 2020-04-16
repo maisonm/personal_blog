@@ -1,5 +1,6 @@
 const BlogPost = require('../../models/blog/BlogPost');
 const date_ = require('../utils/date_');
+const validator = require('validator');
 
 exports.add_blog_post = async (req, res, next) => {
   const { body } = req;
@@ -10,7 +11,7 @@ exports.add_blog_post = async (req, res, next) => {
     description,
     post_body,
     draft,
-    tags
+    tags,
   } = body;
 
   try {
@@ -23,7 +24,7 @@ exports.add_blog_post = async (req, res, next) => {
       featuredImage,
       draft,
       description,
-      tags: tagsArr
+      tags: tagsArr,
     });
 
     const saveBlogPost = await newBlogPost.save();
@@ -41,12 +42,14 @@ exports.get_single_post = async (req, res, next) => {
   const { postid } = params;
 
   try {
+    if (!validator.isMongoId(postid)) return res.sendStatus(400);
+
     const findPost = await BlogPost.findOne({ _id: postid });
 
     if (!findPost) throw new Error('Blog post not found.');
 
     res.json({
-      post: findPost
+      post: findPost,
     });
   } catch (err) {
     next(err);
@@ -64,7 +67,7 @@ exports.get_all_posts = async (req, res, next) => {
     if (!getAllPosts) throw new Error('Could not get blog posts.');
 
     res.json({
-      posts: date_.sort(getAllPosts, sortby)
+      posts: date_.sort(getAllPosts, sortby),
     });
   } catch (error) {
     next(error);
@@ -81,7 +84,7 @@ exports.remove_post = async (req, res, next) => {
     if (!removePost) throw new Error('Failed to remove blog post.');
     else {
       return res.json({
-        message: `Succesfuly removed blog post: ${postid}`
+        message: `Succesfuly removed blog post: ${postid}`,
       });
     }
   } catch (error) {
@@ -103,7 +106,7 @@ exports.update_post = async (req, res, next) => {
     if (!updatePost) throw new Error('Post could not be updated.');
 
     return res.json({
-      message: 'Successfuly updated the post.'
+      message: 'Successfuly updated the post.',
     });
   } catch (error) {
     next(error);

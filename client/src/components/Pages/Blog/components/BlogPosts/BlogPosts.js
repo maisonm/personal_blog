@@ -46,6 +46,7 @@ const BlogPosts = ({ blogPosts, dashboard, removePost, showEditPost }) => {
           push
           to={{
             pathname: `/blog/post/react-rendering-arrays/?postid=${redirectPost.post_id}`,
+            query: { postid: redirectPost.post_id },
             post: redirectPost.post,
           }}
         />

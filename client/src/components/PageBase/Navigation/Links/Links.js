@@ -39,8 +39,6 @@ const Links = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.link);
-
   return {
     link: state.link,
   };

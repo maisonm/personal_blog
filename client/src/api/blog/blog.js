@@ -1,5 +1,5 @@
 export const blog_routes = {
-  get_single_post: async postid => {
+  get_single_post: async (postid) => {
     try {
       const singlePost = await fetch(`/v1/blog/post/${postid}`);
       if (!singlePost) throw new Error('Failed to get post.');
@@ -7,7 +7,7 @@ export const blog_routes = {
     } catch (error) {
       let err = {
         status: 400,
-        message: error.message
+        message: error.message,
       };
       return err;
     }
@@ -21,13 +21,13 @@ export const blog_routes = {
     } catch (error) {
       let err = {
         status: 400,
-        message: error.message
+        message: error.message,
       };
 
       return err;
     }
   },
-  add_post: async config => {
+  add_post: async (config) => {
     try {
       const addPost = await fetch('/v1/blog/add_post', config);
 
@@ -36,7 +36,7 @@ export const blog_routes = {
     } catch (error) {
       let err = {
         status: 400,
-        message: error.message
+        message: error.message,
       };
       return err;
     }
@@ -50,7 +50,7 @@ export const blog_routes = {
     } catch (error) {
       let err = {
         status: 400,
-        message: error.message
+        message: error.message,
       };
       return err;
     }
@@ -63,9 +63,9 @@ export const blog_routes = {
     } catch (error) {
       let err = {
         status: 400,
-        message: error.message
+        message: error.message,
       };
       return err;
     }
-  }
+  },
 };
