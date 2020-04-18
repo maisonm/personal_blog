@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import me from './assets/maison-golf.jpeg';
 
 export const AboutContainer = styled.div`
   width: 100%;
@@ -14,6 +15,18 @@ export const AboutMeBlock = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 20px;
+`;
+
+export const MyPhoto = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  background: url(${me});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   margin-bottom: 20px;
 `;
 
@@ -37,6 +50,7 @@ export const AboutMeBlockDetails = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  animation: ${(props) => props.theme.slideInRight} 0.5s ease;
 
   & > div {
     margin-left: 14px;
@@ -57,7 +71,7 @@ export const AboutMeBlockDetailsLogos = styled.div`
   }
 
   & > img.sm {
-    width: 28px;
+    width: 30px;
   }
 
   & > img.xl {

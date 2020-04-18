@@ -8,6 +8,7 @@ import {
   AboutMeBlockDetails,
   AboutMeBlockDetailsLogos,
   AboutMeBlockText,
+  MyPhoto,
 } from './styles';
 
 import { connect } from 'react-redux';
@@ -24,6 +25,7 @@ import nodeLogo from './assets/node.svg';
 import reactLogo from './assets/react.svg';
 import reduxLogo from './assets/redux.svg';
 import sassLogo from './assets/sass.svg';
+import me from './assets/me.JPG';
 
 //Components
 import Page from '../../Layout/Page';
@@ -36,6 +38,9 @@ const About = ({ navlinkActive }) => {
   return (
     <Page pageTitle="About Me">
       <AboutContainer>
+        <AboutMeBlock>
+          <MyPhoto />
+        </AboutMeBlock>
         <AboutMeBlock>
           <AboutMeBlockHeader>
             <p>Maison Moa</p>
@@ -88,10 +93,10 @@ const About = ({ navlinkActive }) => {
           </AboutMeBlockHeader>
           <AboutMeBlockText>
             <p>
-              Aside from doing battle in the many Javascript realms, I like to
-              spend my time on the golf course (if you wanted to golf, I'm not
-              saying no), tending to my house plants, exploring one of my many
-              random ideas, or grabbing a beer (or two). I'm simple, okay!
+              Aside from doing battle in realms of Javascript, I like to spend
+              my time on the golf course (if you wanted to golf, I'm not saying
+              no), tending to my house plants, exploring one of my many random
+              ideas, or grabbing a beer (or two). I'm simple, okay!
             </p>
             <p>
               I am very passionate about development, and the entire learning
