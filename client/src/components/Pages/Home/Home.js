@@ -48,7 +48,7 @@ const Home = (props) => {
             View My Blog
           </Link>
         </HeroViewPosts>
-        <SocialLinks />
+        <SocialLinks position={true} animation="bounceInUp" />
       </HomePageHero>
       <LatestPostsHeader>
         <h3>Latest Posts</h3>

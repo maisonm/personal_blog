@@ -19,6 +19,7 @@ import Home from './components/Pages/Home/Home';
 import ViewPost from './components/Pages/Blog/components/ViewPost/ViewPost';
 import About from './components/Pages/About/About';
 import Page404 from './components/Pages/404/404Page';
+import Contact from './components/Pages/Contact/Contact';
 //FA
 import fontawesome from './fontawesome_library/fontawesome';
 
@@ -34,6 +35,7 @@ ReactDOM.render(
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/blog" component={Blog} />
+            <Route exact path="/contact" component={Contact} />
             <Route exact path="/blog/post/:postname*/" component={ViewPost} />
             <Route
               exact

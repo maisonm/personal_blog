@@ -33,6 +33,7 @@ export const main_theme = {
   inputBorderRad: '3px',
   inputBoxShadow: '0px 0px 4px #e6e6e6',
   inputBorder: '1.5px solid #e6e6e6',
+  inputBorderLight: '1.5px solid #a6a6a6',
   inputBorderActive: '1.5px solid #808080',
   inputFontSizeLg: '1em',
   inputFontSizeMd: '.95em',
@@ -40,6 +41,7 @@ export const main_theme = {
 
   //Buttons
   mainBtnBg: '#e6e6e6',
+  mainBtnBgLight: '#a6a6a6',
   altBtnBg: '#fa8072',
   btnFontSizeLg: '1.2em',
   btnFontSizeMd: '.92em',

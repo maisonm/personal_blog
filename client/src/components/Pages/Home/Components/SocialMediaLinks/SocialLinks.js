@@ -10,9 +10,9 @@ import { social_links } from '../../../../../utils/social_links';
 //Components
 import Icon from '../../../../Icons/Icon';
 
-const SocialLinks = (props) => {
+const SocialLinks = ({ position, animation }) => {
   return (
-    <SocialLinkContainer>
+    <SocialLinkContainer position={position} animation={animation}>
       <a href={social_links.github()} target="_blank">
         <Icon
           icon={['fab', 'github']}
