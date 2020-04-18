@@ -81,6 +81,7 @@ export const main_theme = {
 
   //Icons
   mainIconColor: '#808080',
+  mainnIconColorDark: '#020202',
   mainIconColorLight: '#B4B4B4',
   secondaryIconColor: `#fa8072`,
   secondaryIconColorLight: `#fdd3ce`,

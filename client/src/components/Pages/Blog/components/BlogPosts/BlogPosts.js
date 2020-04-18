@@ -18,6 +18,9 @@ import {
   AreYouSureRemove,
 } from './styles';
 
+//Utils
+import { date_format } from '../../../../../utils/date_format';
+
 //FA
 import Icon from '../../../../Icons/Icon';
 
@@ -88,19 +91,17 @@ const BlogPosts = ({ blogPosts, dashboard, removePost, showEditPost }) => {
               }}
             >
               <BlogPostHeader>{post.title}</BlogPostHeader>
-              <BlogPostDescription>
-                This is a blog post that describes something really cool. It
-                doesn't really matter what that is.
-              </BlogPostDescription>
+              <BlogPostDescription>{post.description}</BlogPostDescription>
               <BlogPostInfo>
                 <BlogPostInfoBox>
                   <div>
                     <Icon
                       icon={['far', 'edit']}
                       size="sm"
-                      color="mainIconColor"
+                      color="mainIconColorDark"
                     />
-                    <span>last edited:</span> 03/05/20
+                    <span>last edited:</span>
+                    <span>{date_format.mmddyyyy(post.date)}</span>
                   </div>
                 </BlogPostInfoBox>
                 <BlogPostInfoBox>
@@ -108,9 +109,9 @@ const BlogPosts = ({ blogPosts, dashboard, removePost, showEditPost }) => {
                     <Icon
                       icon={['far', 'sticky-note']}
                       size="sm"
-                      color="mainIconColor"
+                      color="mainIconColorDark"
                     />
-                    <span>tags:</span> react, javascript, es6
+                    <span>tags:</span> <span>{post.tags.join(', ')}</span>
                   </div>
                 </BlogPostInfoBox>
                 {dashboard ? (

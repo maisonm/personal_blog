@@ -60,7 +60,7 @@ const ViewPost = (props) => {
             <p>Author:</p>
             <span>{postData.post.author}</span>
             <p>Tags:</p>
-            <span>{postData.post.tags.map((tag) => `${tag},`)}</span>
+            <span>{postData.post.tags.join(', ')}</span>
             <p>Published:</p>
             <span>03-10-20</span>
           </PostDetails>

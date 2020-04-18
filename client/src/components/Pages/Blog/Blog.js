@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 //Redux
-//Redux
 import { connect } from 'react-redux';
 import NAVBAR_ACTIONS from '../../../modules/actions/navbar_actions';
 

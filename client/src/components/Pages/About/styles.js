@@ -20,6 +20,7 @@ export const AboutMeBlock = styled.div`
 export const AboutMeBlockHeader = styled.div`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 100%;
 
   & > p {
@@ -27,6 +28,7 @@ export const AboutMeBlockHeader = styled.div`
     border-radius: 2px;
     background: black;
     color: white;
+    margin: 0;
   }
 `;
 
@@ -38,6 +40,32 @@ export const AboutMeBlockDetails = styled.div`
 
   & > div {
     margin-left: 14px;
+
+    & > p {
+      color: ${(props) => props.theme.mainFontColor};
+    }
+  }
+`;
+
+export const AboutMeBlockDetailsLogos = styled.div`
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > img {
+    width: 36px;
+  }
+
+  & > img.sm {
+    width: 28px;
+  }
+
+  & > img.xl {
+    width: 48px;
+  }
+
+  & > img.xxl {
+    width: 58px;
   }
 `;
 
@@ -47,10 +75,11 @@ export const AboutMeBlockText = styled.div`
   font-size: 0.94em;
   font-weight: 500;
   letter-spacing: 0.2px;
-  color: ${props => props.theme.mainFontColorMediumDark};
+  color: ${(props) => props.theme.mainFontColorMediumDark};
   line-height: 1.5;
 
   & > p {
     margin-bottom: 18px;
+    line-height: 1.6;
   }
 `;

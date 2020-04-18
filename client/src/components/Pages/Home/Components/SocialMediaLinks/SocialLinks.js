@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 //Styles
 import { SocialLinkContainer } from './styles';
 
+//Utils
+import { social_links } from '../../../../../utils/social_links';
+
 //Components
 import Icon from '../../../../Icons/Icon';
 
 const SocialLinks = (props) => {
   return (
     <SocialLinkContainer>
-      <a href="https://github.com/maisonm" target="_blank">
+      <a href={social_links.github()} target="_blank">
         <Icon
           icon={['fab', 'github']}
           size="xxl"
@@ -19,7 +22,7 @@ const SocialLinks = (props) => {
           hovercolor="secondaryIconColor"
         />
       </a>
-      <a href="https://www.linkedin.com/in/maisonmoa" target="_blank">
+      <a href={social_links.linkedIn()} target="_blank">
         <Icon
           icon={['fab', 'linkedin-in']}
           size="xxl"
@@ -28,7 +31,7 @@ const SocialLinks = (props) => {
           hovercolor="secondaryIconColor"
         />
       </a>
-      <a href="https://www.instagram.com/maison_m/" target="_blank">
+      <a href={social_links.instagram()} target="_blank">
         <Icon
           icon={['fab', 'instagram']}
           size="xxl"

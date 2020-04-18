@@ -17,29 +17,31 @@ export const BlogListCard = styled.div`
   justify-content: space-around;
   flex-direction: column;
   padding: 20px 0px;
-  border-bottom: solid 1px ${props => props.theme.mainBorderColor};
+  border-bottom: solid 1px ${(props) => props.theme.mainBorderColor};
   margin-bottom: 4px;
   height: 140px;
   cursor: pointer;
-  transition: ${props => props.theme.animationTrans};
+  transition: ${(props) => props.theme.animationTrans};
   animation: 0.3s ease ${fadeInAni};
 
   &:hover {
-    transition: ${props => props.theme.animationTrans};
-    border-bottom: solid 1px ${props => props.theme.altBorderColor};
+    transition: ${(props) => props.theme.animationTrans};
+    border-bottom: solid 1px ${(props) => props.theme.altBorderColor};
   }
 `;
 
 export const BlogPostHeader = styled.h3`
   margin-bottom: 10px;
+  letter-spacing: 0.3px;
 `;
 
 export const BlogPostDescription = styled.div`
   overflow: none;
-  color: ${props => props.theme.mainFontColorMedium};
+  color: ${(props) => props.theme.mainFontColorMedium};
   width: 60%;
   font-weight: 500;
   letter-spacing: -0.5px;
+  line-height: 1.2;
 `;
 
 export const BlogPostInfo = styled.div`
@@ -54,17 +56,19 @@ export const BlogPostInfoBox = styled.div`
   font-size: 0.8em;
   font-weight: 500;
   margin-right: 14px;
-  color: ${props => props.theme.secondaryFontColor};
   max-width: 100%;
 
   & > div {
     display: flex;
-    color: ${props => props.theme.mainFontColorMedium};
   }
 
   & > div span {
     margin-right: 4px;
-    color: ${props => props.theme.mainFontColorMedium};
+    color: ${(props) => props.theme.mainFontColorDark};
+  }
+
+  & > div span:nth-child(3) {
+    color: ${(props) => props.theme.secondaryFontColor};
   }
 `;
 
@@ -76,26 +80,26 @@ export const AreYouSureRemove = styled.div`
   align-items: center;
   font-size: 0.8em;
   font-weight: 500;
-  transition: ${props => props.theme.hoverTrans};
+  transition: ${(props) => props.theme.hoverTrans};
   animation: 0.3s ease ${slideIn};
 
   & > p {
     margin-right: 12px;
-    color: ${props => props.theme.fontWarningColor};
+    color: ${(props) => props.theme.fontWarningColor};
   }
 
   & > button {
     outline: none;
     margin-right: 8px;
-    border: 2px solid ${props => props.theme.mainBorderColor};
+    border: 2px solid ${(props) => props.theme.mainBorderColor};
     padding: 2px 4px;
-    border-radius: ${props => props.theme.borderRad};
+    border-radius: ${(props) => props.theme.borderRad};
     cursor: pointer;
-    transition: ${props => props.theme.hoverTrans};
+    transition: ${(props) => props.theme.hoverTrans};
 
     &:hover {
-      transition: ${props => props.theme.hoverTrans};
-      box-shadow: ${props => props.theme.mainBoxShadowNoOff};
+      transition: ${(props) => props.theme.hoverTrans};
+      box-shadow: ${(props) => props.theme.mainBoxShadowNoOff};
     }
   }
 `;
